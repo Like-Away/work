@@ -106,7 +106,7 @@
     computed: {
       // 验证手机号是否合理
       phoneRight() {
-        return /^[1][3,4,5,7,8][0-9]{9}$/.test(this.phone)
+        return /^[1][3,4,5,7,8,9][0-9]{9}$/.test(this.phone)
       }
     },
     methods: {
