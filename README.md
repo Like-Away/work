@@ -66,5 +66,5 @@
 - `mkdir static` 新建static文件夹
 - `npm install` 安装依赖
 - `npm run dev` 在本地运行
-- 接着就可以在`http://localhost:8080`下访问到该项目
+- 接着就可以在`http://localhost:8081`下访问到该项目
 

@@ -17,18 +17,18 @@ app.use(cookieParser());
 
 // 使用express-session保存用户登录状况
 app.use(session({
-	secret: config.secret,
-	resave: false,
-	saveUninitialized: true,
-	cookie: {
-		maxAge: config.maxAge, 
-	},
+    secret: config.secret,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        maxAge: config.maxAge,
+    },
 }));
 
 
 // 请求体
 import bodyParser from 'body-parser'
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // view engine setup
 app.set('views', config.viewsPath);
@@ -43,21 +43,21 @@ app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  next(createError(404));
+    next(createError(404));
 });
 
 // error handler
 app.use((err, req, res, next) => {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
-app.listen(config.port, ()=>{
+app.listen(config.port, () => {
     console.log(`服务器已经启动, 端口是: ${config.port}`);
 });
 
